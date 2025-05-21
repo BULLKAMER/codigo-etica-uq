@@ -280,11 +280,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('electronic-section').style.display = 'none';
     
     // Configurar fondos para las secciones
-    civilSection.style.background = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/civil-bg.jpg)';
+    civilSection.style.background = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://bullkamer.github.io/codigo-etica-uq/images/civil-bg.jpg)';
     civilSection.style.backgroundSize = 'cover';
     civilSection.style.backgroundAttachment = 'fixed';
     
-    electronicSection.style.background = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/electronic-bg.jpg)';
+    electronicSection.style.background = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://bullkamer.github.io/codigo-etica-uq//images/electronic-bg.jpg)';
     electronicSection.style.backgroundSize = 'cover';
     electronicSection.style.backgroundAttachment = 'fixed';
 });
