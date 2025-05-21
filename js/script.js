@@ -253,6 +253,9 @@ function loadSignatures() {
 }
 
 // Función para guardar firmas en LocalStorage
+// Variables globales
+let commitmentCount = 0;
+let signatures = [];
 function saveSignatures() {
     localStorage.setItem('engineeringEthicsSignatures', JSON.stringify(signatures));
 }
