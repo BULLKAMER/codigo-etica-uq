@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ética en la Ingeniería: Civil y Electrónica - Universidad del Quindío</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header con logo -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="images/logo-uniquindio.png" alt="Logo Universidad del Quindío" class="university-logo">
+            </div>
+            <div class="header-text">
+                <h1>Ética en la Ingeniería</h1>
+                <p>Código Ético Integrado para Ingeniería Civil y Electrónica</p>
+                <p class="facultad">Facultad de Ingeniería - Universidad del Quindío</p>
+            </div>
+        </div>
+        
+        <!-- Barra de navegación -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="#welcome-section" class="nav-link active"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#civil-section" class="nav-link"><i class="fas fa-building"></i> Civil</a></li>
+                <li><a href="#electronic-section" class="nav-link"><i class="fas fa-microchip"></i> Electrónica</a></li>
+                <li><a href="#comparison-section" class="nav-link"><i class="fas fa-balance-scale"></i> Comparador</a></li>
+                <li><a href="#quiz-section" class="nav-link"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                <li><a href="#commitment-section" class="nav-link"><i class="fas fa-handshake"></i> Compromiso</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Contenido principal (se mantiene igual que antes) -->
+    <main class="container">
+        <!-- Welcome Section -->
+        <section class="section welcome-section" id="welcome-section">
+            <h2>Bienvenido al Código Ético Interactivo</h2>
+            <p>"La ética no es un lujo, sino la condición fundamental para el ejercicio responsable de la ingeniería"</p>
+            <p>El ejercicio de la ingeniería, tanto electrónica como civil, debe estar guiado por principios que aseguren el compromiso ético, el respeto por la sociedad y la búsqueda del bienestar colectivo.</p>
+            <div class="branch-buttons">
+                <button class="branch-button civil" onclick="showBranch('civil')">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12,3L2,12H5V20H19V12H22L12,3M12,8.5C14.34,8.5 16.46,9.43 18,10.94L16.8,12.12C15.58,10.91 13.88,10.17 12,10.17C10.12,10.17 8.42,10.91 7.2,12.12L6,10.94C7.54,9.43 9.66,8.5 12,8.5M12,11.83C13.4,11.83 14.67,12.39 15.6,13.3L14.4,14.47C13.79,13.87 12.94,13.5 12,13.5C11.06,13.5 10.21,13.87 9.6,14.47L8.4,13.3C9.33,12.39 10.6,11.83 12,11.83M12,15.17C12.94,15.17 13.7,15.91 13.7,16.83C13.7,17.75 12.94,18.5 12,18.5C11.06,18.5 10.3,17.75 10.3,16.83C10.3,15.91 11.06,15.17 12,15.17Z" />
+                    </svg>
+                    Ingeniería Civil
+                </button>
+                <button class="branch-button electronic" onclick="showBranch('electronic')">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M10,2V5H14V2H10M5,9H19V23H5V9M15,10A2,2 0 0,0 13,12A2,2 0 0,0 15,14A2,2 0 0,0 17,12A2,2 0 0,0 15,10M9,10A2,2 0 0,0 7,12A2,2 0 0,0 9,14A2,2 0 0,0 11,12A2,2 0 0,0 9,10M12,17A3,3 0 0,0 9,20H15A3,3 0 0,0 12,17Z" />
+                    </svg>
+                    Ingeniería Electrónica
+                </button>
+            </div>
+        </section>
+        
+        <!-- Civil Engineering Section -->
+        <section class="section branch-section" id="civil-section">
+            <div class="section-header branch-header civil">
+                <h2>Ingeniería Civil</h2>
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </div>
+            <div class="section-content">
+                <div class="tabs">
+                    <div class="tab civil active" onclick="showTab('civil', 'principles')">Principios Éticos</div>
+                    <div class="tab civil" onclick="showTab('civil', 'norms')">Normas Específicas</div>
+                    <div class="tab civil" onclick="showTab('civil', 'cases')">Casos Prácticos</div>
+                </div>
+                
+                <!-- Civil Engineering Principles Tab -->
+                <div class="tab-content active" id="civil-principles">
+                    <h3>Principios Éticos en Ingeniería Civil</h3>
+                    <p>Los ingenieros civiles tienen la responsabilidad de diseñar y construir infraestructuras que garanticen la seguridad pública y el bienestar general, considerando el impacto a largo plazo de sus obras.</p>
+                    
+                    <div class="principle-cards">
+                        <div class="principle-card">
+                            <h4>Integridad</h4>
+                            <p>Actuar con coherencia, sinceridad y responsabilidad en todas las decisiones técnicas y profesionales relacionadas con la construcción e infraestructura.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Responsabilidad</h4>
+                            <p>Asumir las consecuencias de las decisiones técnicas, reconociendo su impacto en la seguridad pública y la infraestructura a corto y largo plazo.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Sustentabilidad</h4>
+                            <p>Desarrollar infraestructuras respetuosas del medio ambiente, considerando el ciclo de vida completo y el uso consciente de los recursos naturales.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Rendición de cuentas</h4>
+                            <p>Asumir la responsabilidad por las decisiones de diseño e implementación, estando dispuesto a explicar y justificar las acciones tomadas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Civil Engineering Norms Tab -->
+                <div class="tab-content" id="civil-norms">
+                    <h3>Normas Específicas para Ingeniería Civil</h3>
+                    <p>Estas normas específicas guían la práctica responsable de la ingeniería civil:</p>
+                    
+                    <div class="principle-cards">
+                        <div class="principle-card">
+                            <h4>Norma 1</h4>
+                            <p>Garantizar que las estructuras e infraestructuras diseñadas y construidas cumplan o superen los códigos y estándares de seguridad establecidos.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 2</h4>
+                            <p>Reconocer la responsabilidad a largo plazo de las obras civiles, considerando su vida útil, mantenimiento y eventual desmantelamiento o renovación.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 3</h4>
+                            <p>Evaluar y comunicar con precisión el impacto ambiental de los proyectos de infraestructura, incluyendo efectos sobre ecosistemas y recursos hídricos.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 4</h4>
+                            <p>Considerar el contexto social, cultural e histórico del entorno donde se desarrollan los proyectos, respetando el patrimonio y las necesidades locales.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 5</h4>
+                            <p>Gestionar con responsabilidad los recursos públicos y privados invertidos en proyectos de infraestructura.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 6</h4>
+                            <p>Diseñar infraestructuras accesibles e inclusivas que consideren las necesidades de personas con diversidad funcional y grupos vulnerables.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 7</h4>
+                            <p>Implementar y promover prácticas de construcción sostenible, utilizando materiales ecoeficientes y técnicas que minimicen el impacto ambiental.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 8</h4>
+                            <p>Desarrollar planes de mitigación y adaptación ante desastres naturales y efectos del cambio climático en las infraestructuras proyectadas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Civil Engineering Cases Tab -->
+                <div class="tab-content" id="civil-cases">
+                    <h3>Casos Prácticos y Dilemas Éticos</h3>
+                    <p>Analiza estos escenarios y reflexiona sobre las decisiones éticas adecuadas en ingeniería civil:</p>
+                    
+                    <div class="case-study">
+                        <h4>Caso 1: Presión para reducir costos</h4>
+                        <p>En un proyecto de construcción de un puente, el cliente presiona para reducir costos utilizando materiales de menor calidad que los especificados originalmente. El ingeniero civil sabe que esto podría comprometer la integridad estructural a largo plazo, aunque probablemente cumpliría con los requisitos mínimos inmediatos.</p>
+                        <p><strong>¿Qué debería hacer el ingeniero civil?</strong></p>
+                        
+                        <div class="case-buttons">
+                            <button class="case-button" onclick="evaluateCase('civil-case-1', 'a')">A) Aceptar los cambios para mantener al cliente satisfecho y cumplir con el presupuesto</button>
+                            <button class="case-button" onclick="evaluateCase('civil-case-1', 'b')">B) Rechazar los cambios y explicar los riesgos, documentando formalmente su posición</button>
+                            <button class="case-button" onclick="evaluateCase('civil-case-1', 'c')">C) Buscar una solución intermedia que reduzca costos de otras maneras sin comprometer la seguridad</button>
+                        </div>
+                        
+                        <div class="case-feedback" id="civil-case-1-feedback"></div>
+                    </div>
+                    
+                    <div class="case-study">
+                        <h4>Caso 2: Impacto ambiental no previsto</h4>
+                        <p>Durante la construcción de una carretera, se descubre un ecosistema frágil que no fue identificado en los estudios ambientales iniciales. Detener el proyecto significaría grandes pérdidas económicas y retrasos significativos.</p>
+                        <p><strong>¿Cuál sería la acción ética correcta?</strong></p>
+                        
+                        <div class="case-buttons">
+                            <button class="case-button" onclick="evaluateCase('civil-case-2', 'a')">A) Continuar la construcción según lo planeado, minimizando el daño en lo posible</button>
+                            <button class="case-button" onclick="evaluateCase('civil-case-2', 'b')">B) Paralizar temporalmente la obra y realizar un nuevo estudio ambiental completo</button>
+                            <button class="case-button" onclick="evaluateCase('civil-case-2', 'c')">C) Rediseñar la ruta para evitar el ecosistema aunque implique mayores costos</button>
+                        </div>
+                        
+                        <div class="case-feedback" id="civil-case-2-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Electronic Engineering Section -->
+        <section class="section branch-section" id="electronic-section">
+            <div class="section-header branch-header electronic">
+                <h2>Ingeniería Electrónica</h2>
+                <button class="back-button" onclick="goBack()">Volver</button>
+            </div>
+            <div class="section-content">
+                <div class="tabs">
+                    <div class="tab electronic active" onclick="showTab('electronic', 'principles')">Principios Éticos</div>
+                    <div class="tab electronic" onclick="showTab('electronic', 'norms')">Normas Específicas</div>
+                    <div class="tab electronic" onclick="showTab('electronic', 'cases')">Casos Prácticos</div>
+                </div>
+                
+                <!-- Electronic Engineering Principles Tab -->
+                <div class="tab-content active" id="electronic-principles">
+                    <h3>Principios Éticos en Ingeniería Electrónica</h3>
+                    <p>Los ingenieros electrónicos diseñan y desarrollan tecnologías que influyen en la comunicación, la salud, la seguridad y muchos otros aspectos fundamentales de la vida moderna.</p>
+                    
+                    <div class="principle-cards">
+                        <div class="principle-card">
+                            <h4>Integridad</h4>
+                            <p>Actuar con coherencia, sinceridad y responsabilidad en todas las decisiones técnicas y profesionales relacionadas con el desarrollo tecnológico.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Responsabilidad</h4>
+                            <p>Asumir las consecuencias de las decisiones técnicas, reconociendo su impacto en la seguridad y privacidad de los usuarios finales.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Sustentabilidad</h4>
+                            <p>Desarrollar tecnologías eficientes energéticamente y considerar el ciclo de vida completo de los dispositivos electrónicos, incluida su gestión como residuos.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Rendición de cuentas</h4>
+                            <p>Asumir la responsabilidad por las decisiones de diseño e implementación de sistemas electrónicos y su impacto en los usuarios.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Electronic Engineering Norms Tab -->
+                <div class="tab-content" id="electronic-norms">
+                    <h3>Normas Específicas para Ingeniería Electrónica</h3>
+                    <p>Estas normas específicas guían la práctica responsable de la ingeniería electrónica:</p>
+                    
+                    <div class="principle-cards">
+                        <div class="principle-card">
+                            <h4>Norma 1</h4>
+                            <p>Velar por la seguridad de los sistemas electrónicos diseñados, previniendo riesgos como sobrecargas, cortocircuitos o emisiones electromagnéticas perjudiciales.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 2</h4>
+                            <p>Proteger la privacidad y seguridad de los datos en todos los sistemas electrónicos desarrollados, implementando medidas preventivas adecuadas.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 3</h4>
+                            <p>Considerar el ciclo de vida completo de los dispositivos electrónicos, incluyendo su eventual obsolescencia y gestión como residuos electrónicos.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>                            <h4>Norma 4</h4>
+                            <p>Desarrollar tecnologías eficientes energéticamente, minimizando el consumo de recursos y la generación de calor residual.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 5</h4>
+                            <p>Evitar el uso de materiales tóxicos o de procedencia cuestionable en la fabricación de dispositivos electrónicos, cuando existan alternativas viables.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 6</h4>
+                            <p>Garantizar la compatibilidad electromagnética de los dispositivos, evitando interferencias que puedan afectar a otros sistemas críticos.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 7</h4>
+                            <p>Promover la accesibilidad digital, diseñando interfaces y sistemas que puedan ser utilizados por personas con diferentes capacidades.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Norma 8</h4>
+                            <p>Considerar los aspectos éticos de la inteligencia artificial y sistemas autónomos, evitando algoritmos que perpetúen sesgos o discriminación.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Electronic Engineering Cases Tab -->
+                <div class="tab-content" id="electronic-cases">
+                    <h3>Casos Prácticos y Dilemas Éticos</h3>
+                    <p>Analiza estos escenarios y reflexiona sobre las decisiones éticas adecuadas en ingeniería electrónica:</p>
+                    
+                    <div class="case-study">
+                        <h4>Caso 1: Vulnerabilidad de seguridad</h4>
+                        <p>Un ingeniero electrónico descubre una vulnerabilidad crítica en un dispositivo médico que ya está en el mercado. Corregirla requeriría una costosa actualización de firmware y podría generar preocupación pública, pero dejarla sin corregir podría poner en riesgo a los pacientes.</p>
+                        <p><strong>¿Qué debería hacer el ingeniero?</strong></p>
+                        
+                        <div class="case-buttons">
+                            <button class="case-button" onclick="evaluateCase('electronic-case-1', 'a')">A) Reportar internamente pero aceptar si la empresa decide no actuar para evitar costos</button>
+                            <button class="case-button" onclick="evaluateCase('electronic-case-1', 'b')">B) Insistir en la corrección inmediata y, si es necesario, reportar a las autoridades reguladoras</button>
+                            <button class="case-button" onclick="evaluateCase('electronic-case-1', 'c')">C) Publicar la vulnerabilidad en foros técnicos para presionar a la empresa a actuar</button>
+                        </div>
+                        
+                        <div class="case-feedback" id="electronic-case-1-feedback"></div>
+                    </div>
+                    
+                    <div class="case-study">
+                        <h4>Caso 2: Obsolescencia programada</h4>
+                        <p>Una empresa de electrónica de consumo quiere implementar obsolescencia programada en sus dispositivos para aumentar las ventas de reemplazo. El ingeniero a cargo sabe que esto generará más residuos electrónicos y perjudicará a los consumidores, pero aumentará las ganancias de la empresa.</p>
+                        <p><strong>¿Cuál sería la acción ética correcta?</strong></p>
+                        
+                        <div class="case-buttons">
+                            <button class="case-button" onclick="evaluateCase('electronic-case-2', 'a')">A) Implementar la obsolescencia programada como se le ha ordenado</button>
+                            <button class="case-button" onclick="evaluateCase('electronic-case-2', 'b')">B) Proponer alternativas que mantengan la competitividad sin engañar a los consumidores</button>
+                            <button class="case-button" onclick="evaluateCase('electronic-case-2', 'c')">C) Renunciar al proyecto y denunciar la práctica si persiste</button>
+                        </div>
+                        
+                        <div class="case-feedback" id="electronic-case-2-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Comparison Section -->
+        <section class="section" id="comparison-section">
+            <div class="section-header">
+                <h2>Comparador Ético</h2>
+            </div>
+            <div class="section-content">
+                <h3>Comparación entre Ingeniería Civil y Electrónica</h3>
+                <p>Explora las similitudes y diferencias en los principios éticos entre ambas disciplinas:</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Ámbito Ético</th>
+                            <th>Ingeniería Civil</th>
+                            <th>Ingeniería Electrónica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Enfoque principal</td>
+                            <td class="civil-cell">Seguridad estructural e impacto ambiental de infraestructuras</td>
+                            <td class="electronic-cell">Seguridad funcional y privacidad en sistemas electrónicos</td>
+                        </tr>
+                        <tr>
+                            <td>Impacto temporal</td>
+                            <td class="civil-cell">Largo plazo (décadas o siglos para infraestructuras)</td>
+                            <td class="electronic-cell">Corto a medio plazo (tecnologías con ciclos de vida más rápidos)</td>
+                        </tr>
+                        <tr>
+                            <td>Preocupación ambiental</td>
+                            <td class="civil-cell">Uso de terrenos, materiales de construcción, impacto en ecosistemas</td>
+                            <td class="electronic-cell">Residuos electrónicos, consumo energético, materiales tóxicos</td>
+                        </tr>
+                        <tr>
+                            <td>Riesgos principales</td>
+                            <td class="civil-cell">Fallas estructurales, colapsos, daños por desastres naturales</td>
+                            <td class="electronic-cell">Fallas de seguridad, violaciones de privacidad, interferencias</td>
+                        </tr>
+                        <tr>
+                            <td>Principios compartidos</td>
+                            <td colspan="2" style="text-align: center;">Integridad, responsabilidad, respeto, compromiso social, honestidad, justicia, sustentabilidad, profesionalismo</td>
+                        </tr>
+                        <tr>
+                            <td>Normas específicas</td>
+                            <td class="civil-cell">Accesibilidad física, gestión de recursos públicos, patrimonio cultural</td>
+                            <td class="electronic-cell">Protección de datos, compatibilidad electromagnética, accesibilidad digital</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Quiz Section -->
+        <section class="section" id="quiz-section">
+            <div class="section-header">
+                <h2>Quiz Interactivo</h2>
+            </div>
+            <div class="section-content">
+                <div class="quiz-container">
+                    <h3>Pon a prueba tu conocimiento sobre ética en ingeniería</h3>
+                    <p>Responde estas preguntas que combinan aspectos de ambas disciplinas:</p>
+                    
+                    <div class="quiz-question" id="quiz-question-1">
+                        <h3>1. ¿Cuál de estas situaciones representa un conflicto de interés ético?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(1, 'a')">A) Un ingeniero civil recomienda a un amigo para un puesto en el proyecto</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 'b')">B) Un ingeniero electrónico acepta regalos costosos de un proveedor cuyo producto está evaluando</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 'c')">C) Ambas situaciones</div>
+                        </div>
+                        <div class="quiz-feedback" id="quiz-feedback-1"></div>
+                    </div>
+                    
+                    <div class="quiz-question" id="quiz-question-2">
+                        <h3>2. ¿Qué principio ético es más relevante cuando se descubre un error en el diseño después de que el producto/infraestructura está en uso?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(2, 'a')">A) Rendición de cuentas</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 'b')">B) Profesionalismo</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 'c')">C) Honestidad</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 'd')">D) Todos los anteriores</div>
+                        </div>
+                        <div class="quiz-feedback" id="quiz-feedback-2"></div>
+                    </div>
+                    
+                    <div class="quiz-question" id="quiz-question-3">
+                        <h3>3. En términos de sustentabilidad, ¿qué práctica es común a ambas ingenierías?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(3, 'a')">A) Considerar el ciclo de vida completo de los productos/infraestructuras</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 'b')">B) Minimizar el uso de recursos no renovables</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 'c')">C) Planificar para el desmantelamiento o reciclaje final</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 'd')">D) Todas las anteriores</div>
+                        </div>
+                        <div class="quiz-feedback" id="quiz-feedback-3"></div>
+                    </div>
+                    
+                    <div class="quiz-navigation">
+                        <button class="quiz-button" onclick="checkQuiz()">Verificar respuestas</button>
+                        <button class="quiz-button" onclick="resetQuiz()">Reiniciar quiz</button>
+                    </div>
+                    
+                    <div class="quiz-score" id="quiz-score">
+                        Tu puntaje: <span id="score">0</span>/3 correctas
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Commitment Section -->
+        <section class="section" id="commitment-section">
+            <div class="section-header">
+                <h2>Zona de Compromiso</h2>
+            </div>
+            <div class="section-content">
+                <div class="commitment-form">
+                    <h3>Firma el Compromiso Ético</h3>
+                    <p>Al firmar, te comprometes a seguir los principios éticos establecidos en este código en tu práctica profesional:</p>
+                    
+                    <input type="text" id="signer-name" placeholder="Tu nombre (opcional)">
+                    <button onclick="signCommitment()">Firmar compromiso</button>
+                    
+                    <div class="commitment-counter">
+                        <p>Total de firmas:</p>
+                        <span class="count" id="commitment-count">0</span>
+                        <p>personas ya se han comprometido con la ética en ingeniería</p>
+                    </div>
+                    
+                    <div class="signature-wall" id="signature-wall">
+                        <!-- Signatures will appear here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- References Section -->
+        <section class="section" id="references-section">
+            <div class="section-header">
+                <h2>Créditos y Referencias</h2>
+            </div>
+            <div class="section-content">
+                <h3>Equipo desarrollador</h3>
+                <p>Este código ético interactivo fue desarrollado por:</p>
+                <ul>
+                    <li>Santiago Marín Giraldo</li>
+                    <li>Juan Camilo Ordonez Giraldo</li>
+                    <li>Jose David Perez Zapata</li>
+                    <li>Jefry Daniel Monsalve Gomez</li>
+                    <li>Maicol Andrés Escobar Rendón</li>
+                </ul>
+                
+                <h3>Referencias principales</h3>
+                <ul>
+                    <li>IEEE Code of Ethics, Institute of Electrical and Electronics Engineers</li>
+                    <li>Código de Ética Profesional, Consejo Profesional Nacional de Ingeniería (COPNIA)</li>
+                    <li>Comisión de Ética, Asociación Colombiana de Ingenieros (ACIEM)</li>
+                    <li>Asociación Colombiana de Facultades de Ingeniería (ACOFI)</li>
+                </ul>
+                
+                <h3>Profesor</h3>
+                <p>Juan Carlos Marín Bedoya<br>
+                Facultad de Ingeniería<br>
+                Universidad del Quindío<br>
+                Mayo de 2025</p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer mejorado -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <img src="images/logo-uniquindio.png" alt="Logo Universidad del Quindío" class="footer-logo">
+                <p>Comprometidos con la excelencia académica y la formación ética de profesionales</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-envelope"></i> etica.ingenieria@uniquindio.edu.co</p>
+                <p><i class="fas fa-phone"></i> +57 (6) 735 9300</p>
+                <p><i class="fas fa-map-marker-alt"></i> Armenia, Quindío, Colombia</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p class="copyright">© 2025 Universidad del Quindío. Todos los derechos reservados.</p>
+            </div>
+        </div>
+        
+        <div class="back-to-top">
+            <a href="#welcome-section"><i class="fas fa-arrow-up"></i> Volver arriba</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
