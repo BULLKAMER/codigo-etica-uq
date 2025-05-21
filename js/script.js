@@ -396,7 +396,6 @@ window.onload = function() {
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     // Ocultar secciones de ramas al cargar
-    initCommitmentSection();
     document.getElementById('civil-section').style.display = 'none';
     document.getElementById('electronic-section').style.display = 'none';
     
