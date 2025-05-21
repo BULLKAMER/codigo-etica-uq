@@ -242,29 +242,82 @@ function resetQuiz() {
     });
 }
 
-// Commitment functions
-let commitmentCount = 0;
-let signatures = [];
+// Función para cargar las firmas desde LocalStorage
+function loadSignatures() {
+    const savedSignatures = localStorage.getItem('engineeringEthicsSignatures');
+    if (savedSignatures) {
+        signatures = JSON.parse(savedSignatures);
+        commitmentCount = signatures.length;
+        updateSignatureDisplay();
+    }
+}
 
-function signCommitment() {
-    const name = document.getElementById('signer-name').value.trim();
+// Función para guardar firmas en LocalStorage
+function saveSignatures() {
+    localStorage.setItem('engineeringEthicsSignatures', JSON.stringify(signatures));
+}
+
+// Función para actualizar el display de firmas
+function updateSignatureDisplay() {
+    document.getElementById('commitment-count').textContent = commitmentCount;
     const signatureWall = document.getElementById('signature-wall');
+    signatureWall.innerHTML = '';
+    
+    signatures.forEach(signature => {
+        const signatureElement = document.createElement('div');
+        signatureElement.className = 'signature';
+        signatureElement.textContent = signature;
+        signatureWall.appendChild(signatureElement);
+    });
+}
+
+// Función para firmar el compromiso (modificada)
+function signCommitment() {
+    const nameInput = document.getElementById('signer-name');
+    const name = nameInput.value.trim();
     
     if (name || confirm('¿Deseas firmar de forma anónima?')) {
-        commitmentCount++;
-        document.getElementById('commitment-count').textContent = commitmentCount;
+        const signatureName = name || 'Anónimo';
         
-        if (name) {
-            signatures.push(name);
-            const signatureElement = document.createElement('div');
-            signatureElement.className = 'signature';
-            signatureElement.textContent = name;
-            signatureWall.appendChild(signatureElement);
-        }
+        signatures.push(signatureName);
+        commitmentCount = signatures.length;
         
-        document.getElementById('signer-name').value = '';
+        saveSignatures(); // Guardar en LocalStorage
+        updateSignatureDisplay();
         
-        alert('¡Gracias por comprometerte con la ética en ingeniería!');
+        nameInput.value = '';
+        
+        // Efecto visual de confeti (opcional)
+        showConfetti();
+        
+        alert(`¡Gracias por tu compromiso, ${signatureName}!`);
+    }
+}
+
+// Cargar firmas al iniciar la página
+document.addEventListener('DOMContentLoaded', () => {
+    loadSignatures();
+    
+    // Resto de tu código de inicialización...
+});
+
+// Función opcional de confeti (para celebrar la firma)
+function showConfetti() {
+    const colors = ['#f3b229', '#005883', '#e67e22', '#9b59b6', '#27ae60'];
+    const container = document.querySelector('.commitment-form');
+    
+    for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 3 + 's';
+        container.appendChild(confetti);
+        
+        // Eliminar después de la animación
+        setTimeout(() => {
+            confetti.remove();
+        }, 5000);
     }
 }
 
@@ -284,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
     civilSection.style.backgroundSize = 'cover';
     civilSection.style.backgroundAttachment = 'fixed';
     
-    electronicSection.style.background = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://bullkamer.github.io/codigo-etica-uq//images/electronic-bg.jpg)';
+    electronicSection.style.background = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://bullkamer.github.io/codigo-etica-uq/images/electronic-bg.jpg)';
     electronicSection.style.backgroundSize = 'cover';
     electronicSection.style.backgroundAttachment = 'fixed';
 });
