@@ -242,67 +242,131 @@ function resetQuiz() {
     });
 }
 
-// Función para cargar las firmas desde LocalStorage
-function loadSignatures() {
-    const savedSignatures = localStorage.getItem('engineeringEthicsSignatures');
-    if (savedSignatures) {
-        signatures = JSON.parse(savedSignatures);
-        commitmentCount = signatures.length;
-        updateSignatureDisplay();
-    }
-}
 
-// Función para guardar firmas en LocalStorage
 // Variables globales
 let commitmentCount = 0;
 let signatures = [];
-function saveSignatures() {
-    localStorage.setItem('engineeringEthicsSignatures', JSON.stringify(signatures));
-}
 
-// Función para actualizar el display de firmas
-function updateSignatureDisplay() {
-    document.getElementById('commitment-count').textContent = commitmentCount;
-    const signatureWall = document.getElementById('signature-wall');
-    signatureWall.innerHTML = '';
+// Función para inicializar la zona de compromiso
+function initCommitmentSection() {
+    loadSignatures();
     
-    signatures.forEach(signature => {
-        const signatureElement = document.createElement('div');
-        signatureElement.className = 'signature';
-        signatureElement.textContent = signature;
-        signatureWall.appendChild(signatureElement);
-    });
-}
-
-// Función para firmar el compromiso (modificada)
-function signCommitment() {
-    const nameInput = document.getElementById('signer-name');
-    const name = nameInput.value.trim();
-    
-    if (name || confirm('¿Deseas firmar de forma anónima?')) {
-        const signatureName = name || 'Anónimo';
-        
-        signatures.push(signatureName);
-        commitmentCount = signatures.length;
-        
-        saveSignatures(); // Guardar en LocalStorage
-        updateSignatureDisplay();
-        
-        nameInput.value = '';
-        
-        // Efecto visual de confeti (opcional)
-        showConfetti();
-        
-        alert(`¡Gracias por tu compromiso, ${signatureName}!`);
+    // Asignar evento al botón de firmar
+    const signButton = document.querySelector('.commitment-form button');
+    if (signButton) {
+        signButton.addEventListener('click', signCommitment);
     }
 }
 
-// Cargar firmas al iniciar la página
-document.addEventListener('DOMContentLoaded', () => {
-    loadSignatures();
+// Cargar firmas desde LocalStorage
+function loadSignatures() {
+    const savedData = localStorage.getItem('engineeringEthicsCommitments');
+    if (savedData) {
+        const data = JSON.parse(savedData);
+        signatures = data.signatures || [];
+        commitmentCount = data.count || signatures.length;
+        updateSignatureDisplay();
+    }
+}
+
+// Guardar firmas en LocalStorage
+function saveSignatures() {
+    const data = {
+        count: commitmentCount,
+        signatures: signatures,
+        lastUpdate: new Date().toISOString()
+    };
+    localStorage.setItem('engineeringEthicsCommitments', JSON.stringify(data));
+}
+
+// Actualizar el display de firmas
+function updateSignatureDisplay() {
+    const countElement = document.getElementById('commitment-count');
+    const wallElement = document.getElementById('signature-wall');
     
-    // Resto de tu código de inicialización...
-});
+    if (countElement) {
+        countElement.textContent = commitmentCount;
+    }
+    
+    if (wallElement) {
+        wallElement.innerHTML = '';
+        signatures.forEach(signature => {
+            const signatureElement = document.createElement('div');
+            signatureElement.className = 'signature';
+            signatureElement.textContent = signature;
+            wallElement.appendChild(signatureElement);
+        });
+    }
+}
+
+// Función para firmar
+function signCommitment() {
+    const nameInput = document.getElementById('signer-name');
+    const name = nameInput ? nameInput.value.trim() : '';
+    
+    // Validación básica
+    if (name === '' && !confirm('¿Deseas firmar de forma anónima?')) {
+        return;
+    }
+    
+    const signatureName = name || 'Anónimo';
+    signatures.push(signatureName);
+    commitmentCount++;
+    
+    saveSignatures();
+    updateSignatureDisplay();
+    
+    // Limpiar el input
+    if (nameInput) {
+        nameInput.value = '';
+    }
+    
+    // Mostrar feedback
+    showFeedback('¡Gracias por tu compromiso!', 'success');
+    
+    // Efecto de confeti (opcional)
+    showConfetti();
+}
+
+// Mostrar mensaje de feedback
+function showFeedback(message, type) {
+    const feedbackElement = document.createElement('div');
+    feedbackElement.className = `feedback ${type}`;
+    feedbackElement.textContent = message;
+    
+    const form = document.querySelector('.commitment-form');
+    if (form) {
+        form.appendChild(feedbackElement);
+        
+        // Eliminar después de 3 segundos
+        setTimeout(() => {
+            feedbackElement.remove();
+        }, 3000);
+    }
+}
+
+// Efecto de confeti (opcional)
+function showConfetti() {
+    const colors = ['#f3b229', '#005883', '#e67e22', '#9b59b6', '#27ae60'];
+    const container = document.querySelector('.commitment-form');
+    
+    if (!container) return;
+    
+    for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 2 + 's';
+        container.appendChild(confetti);
+        
+        setTimeout(() => {
+            confetti.remove();
+        }, 5000);
+    }
+}
+
+
 
 // Función opcional de confeti (para celebrar la firma)
 function showConfetti() {
@@ -332,6 +396,7 @@ window.onload = function() {
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     // Ocultar secciones de ramas al cargar
+    initCommitmentSection();
     document.getElementById('civil-section').style.display = 'none';
     document.getElementById('electronic-section').style.display = 'none';
     
